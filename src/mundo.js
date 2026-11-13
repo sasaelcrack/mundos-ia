@@ -25,6 +25,11 @@ function crearMundo(args) {
     }
   }
 
+  // Cambio propio 2: limitar el largo para no mandar textos enormes a la API
+  if (args[0].length > 200 || args[1].length > 200) {
+    throw new Error(`La situación y el mundo pueden tener máximo 200 caracteres.\n${USO}`);
+  }
+
   const situacion = args[0].trim();
   const mundo = args[1].trim();
   const colores = args.slice(2).map((color) => color.trim());
