@@ -8,7 +8,9 @@ const MENSAJE_SISTEMA =
   'that describes an image of that world: the scene, the main elements, the lighting, ' +
   'the composition and the artistic style. Mention all five colors (translate them to English). ' +
   'Describe an image, do not tell a story. ' +
-  'No titles, no markdown, no lists, and no written text inside the image.';
+  'No titles, no markdown, no lists, and no written text inside the image.'
+    // Cambio propio 3: forzar el estilo acuarela en todas las imágenes
+  'The artistic style must always be watercolor painting.';
 
 const LIMITE_CARACTERES = 1500;
 
