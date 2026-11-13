@@ -7,6 +7,27 @@ const { generarImagen } = require('./imagen');
 const CARPETA_DESCRIPCIONES = path.join(__dirname, '..', 'descripciones');
 const CARPETA_IMAGENES = path.join(__dirname, '..', 'imagenes');
 
+// Convierte un error técnico en un mensaje claro en español
+function explicarError(error) {
+  if (error.name === 'TimeoutError') {
+    return 'El servicio tardó demasiado en responder.';
+  }
+  if (error instanceof TypeError) {
+    return 'No se pudo conectar. Revisa tu internet o la URL.';
+  }
+  if (error.estado === 401 || error.estado === 403) {
+    return 'La API key no es válida. Revisa tu archivo .env.';
+  }
+  if (error.estado === 402 || error.estado === 429) {
+    const espera = error.retryAfter ? ` Puedes reintentar en ${error.retryAfter} segundos.` : '';
+    return `Superaste el límite gratuito. Espera un momento.${espera}`;
+  }
+  if (error.estado === 404 || error.estado === 410) {
+    return 'El modelo o la URL no existen. Revisa tu configuración.';
+  }
+  return error.message;
+}
+
 async function main() {
   try {
     const args = process.argv.slice(2);
@@ -44,7 +65,7 @@ async function main() {
 
     console.log('Listo. Revisa la carpeta imagenes/');
   } catch (error) {
-    console.log(error.message);
+    console.log(explicarError(error));
     process.exitCode = 1;
   }
 }
