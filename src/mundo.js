@@ -7,6 +7,7 @@ const CARPETA_DATA = path.join(__dirname, '..', 'data');
 
 const USO =
   'Uso: npm start -- "<situación>" "<mundo>" <color1> <color2> <color3> <color4> <color5>\n' +
+    'Recuerda: la situación y el mundo van entre comillas, y los colores sin comillas.\n' +
   'Ejemplo: npm start -- "Una tormenta eléctrica amenaza la ciudad flotante" ' +
   '"Aerópolis, un archipiélago de islas que flotan sobre las nubes" rojo azul verde dorado violeta';
 
