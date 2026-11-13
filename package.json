@@ -1,0 +1,16 @@
+{
+  "name": "mundos-ia",
+  "version": "1.0.0",
+  "description": "Programa de consola que genera bocetos visuales de mundos imaginarios con IA de texto e imagen",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": ["ia", "imagenes", "mundos", "nodejs", "cloudflare", "groq"],
+  "author": "Samuel Salazar Nanclares",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "object-hash": "^3.0.0"
+  }
+}
