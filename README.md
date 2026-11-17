@@ -8,6 +8,10 @@ Programa de consola en Node.js que genera bocetos visuales de mundos imaginarios
 
 Si ejecutas el mismo comando otra vez, no se llama a ninguna API: se reutilizan los archivos ya generados.
 
+## 🎥 Demostración del proyecto
+
+[Ver video de demostración](https://youtu.be/YMB4Gvx3_f8?si=L8k9EUWaNLp87sjM)
+
 ## Servicios usados
 
 - Texto: Groq, modelo `openai/gpt-oss-20b` (https://console.groq.com/keys)
